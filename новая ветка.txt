@@ -1,1 +1,2 @@
 new brench
+конфлик из my_breanch
