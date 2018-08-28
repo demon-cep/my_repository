@@ -1,0 +1,174 @@
+.menu {
+	position: fixed;
+
+	top: 0;
+	
+	height: 100%;
+	min-height: 100vh;
+
+	background-color: #fff;
+	color: #fff;
+	padding-bottom: 50px;
+
+	opacity: 0;
+	z-index: -2;
+
+	transition: $tr;
+	.container {
+		@include flex-row(wrap, space-between, stretch);
+	}
+
+	&.menu_active {
+		transform: translateY(0);
+		opacity: 1;
+		z-index: 10;
+	}
+}
+
+.menu_narrow-left {
+	left: 0;
+	right: auto;
+	width: 290px;
+	transform: translateX(-101%);
+}
+
+.menu_narrow-right {
+	right: 0;
+	left: auto;
+	width: 290px;
+	transform: translateX(101%);
+}
+
+.menu_full-screen {
+	width: 100%;
+	transform: translateY(-101%);
+}
+
+
+
+
+
+
+
+
+
+
+.menu__header {
+	@include flex-row(nowrap, space-between, center);
+	width: 100%;
+	margin-bottom: 2rem;
+	padding: 2rem 2rem;
+	height: 17rem;
+
+}
+.menu__nav {
+	@include flex-col(nowrap, flex-start, flex-start);
+	flex: 1 0 40%;
+	margin-bottom: 4rem;
+	padding-left: 1rem;
+
+	a {
+		color: #fff;
+		font-size: 1.6rem;
+		text-decoration: none;
+		margin-bottom: .5rem;
+		margin-left: -1rem;
+		padding: 1rem;
+
+		transition: 300ms;
+
+		&:hover {
+			// text-decoration: underline;
+			background-color: darken($color_main, 5%);
+		}
+	}
+}
+
+.menu__btn-close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+
+	width: 40px;
+	height: 40px;
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+
+	transform: rotate(45deg);
+
+	transition: 300ms;
+	
+	&:after {
+		@include pseudo;
+
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%);
+
+		width: 35px;
+		height: 1px;
+
+		background: lightgray;
+	}
+
+	&:before {
+		@include pseudo;
+
+		top: 50%;
+		left: 50%;
+		transform: translateY(-50%);
+
+		width: 1px;
+		height: 35px;
+
+		background: lightgray;
+	}
+
+	&:active {
+		border: 0;
+		outline: 0;
+	}
+
+	&:hover {
+		transform: rotate(135deg) scale(1.3);
+	}
+
+}
+
+@media screen and (max-width: 1400px) {
+	.menu__header {
+		padding: 2rem 5rem;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+	.menu__header {
+		// height: 24rem;
+		padding: 2rem 3rem;
+	}
+	.menu {
+		background-position: bottom left;
+		background-repeat: no-repeat;
+		background-size: 769px;
+	}
+	// 	.tel {
+	// 		display: block;
+	// 		margin-right: 4rem;
+	// 		text-align: center;
+	// 		margin: 0;
+	// 	}
+	// }
+}
+
+@media screen and (max-width: 614px) {
+	.menu__header {
+		@include flex-col(nowrap, space-between, center);
+		height: 24rem;
+	}
+	.menu__nav {
+		flex: 1 1 100%;
+	}
+}

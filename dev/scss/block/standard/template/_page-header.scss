@@ -1,0 +1,49 @@
+// block
+.page-header {}
+
+
+// elements
+.page-header__top-bar {
+	.container {
+		@include flex-row(nowrap,space-between,center);
+	}
+}
+
+.page-header__content {
+	padding: 3.1rem 0 5.5rem 0;
+	.container {
+		position: relative;
+		@include flex-row(nowrap, space-between,center);
+	}
+}
+
+.page-header__bottom-bar {
+	.container {
+		@include flex-row(nowrap,space-between,center);
+	}
+}
+
+
+// modificators
+
+
+// responsiveness
+// @media screen and (max-width: 1200px) {
+
+// }
+
+// @media screen and (max-width: 1024px) {
+
+// }
+
+// @media screen and (max-width: 992px) {
+
+// }
+
+// @media screen and (max-width: 768px) {
+
+// }
+
+// @media screen and (max-width: 568px) {
+
+// }

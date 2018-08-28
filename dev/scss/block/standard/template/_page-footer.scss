@@ -1,0 +1,31 @@
+.page-footer {
+	flex: none;
+	width: 100%;
+
+	.container {
+		@include flex-row(nowrap, space-between, stretch);
+	}
+}
+
+
+
+// responsiveness
+// @media screen and (max-width: 1200px) {
+
+// }
+
+// @media screen and (max-width: 1024px) {
+
+// }
+
+// @media screen and (max-width: 992px) {
+
+// }
+
+// @media screen and (max-width: 768px) {
+
+// }
+
+// @media screen and (max-width: 568px) {
+
+// }
